@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("{{ url_for('static', filename='home.jpg') }}");
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      font-family: sans-serif;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Check if your furry friends is truly a Dog or Cat</h1>
+    <form method="post" action="/predict" enctype="multipart/form-data">
+      <div>
+        <input type="file" id="file" name="file" multiple />
+      </div>
+      <div>
+        <button>Classify</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
